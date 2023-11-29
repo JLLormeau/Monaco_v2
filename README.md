@@ -43,6 +43,12 @@ Install monaco (linux-amd64) and get ready to start
     echo "monaco v2 is installed on your host"
 
 Run the script with the desired options. For example:
+   - Export the variables :  
+     
+    export DT_TENANT_URL=https://abcd.live.dynatrace.com
+    export DT_API_TOKEN=XXXX-XXXX
+
+
    - For AWS:  
      
     ./deploy.sh --aws --set-account-name=<name> --set-account-id=<id>
