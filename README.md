@@ -32,7 +32,7 @@ After installing the Monaco client, you can use the deployment scripts in this r
 Clone this repository to your local machine  
 
     cd
-    git clone https://github.com/LLormeau/Monaco_v2
+    git clone https://github.com/JLLormeau/Monaco_v2
     echo "the lab is copy here "`pwd`"/dynatrace-lab"
     
 Install monaco (linux-amd64) and get ready to start  
