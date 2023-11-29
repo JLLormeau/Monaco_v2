@@ -39,7 +39,7 @@ Install monaco (linux-amd64) and get ready to start
 
     cd;cd Monaco_v2/
     curl -L https://github.com/Dynatrace/dynatrace-configuration-as-code/releases/latest/download/monaco-linux-amd64 -o monaco
-    chmod +x monaco
+    chmod +x monaco deploy.sh
     echo "monaco v2 is installed on your host"
 
 Run the script with the desired options. For example:
