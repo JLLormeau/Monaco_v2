@@ -30,9 +30,19 @@ After installing the Monaco client, you can use the deployment scripts in this r
 ### How to Run
 
 1. Clone this repository to your local machine.
-2. Navigate to the cloned directory.
-3. Make the script executable: `chmod +x Monaco_Deploy.sh`.
-4. Run the script with the desired options. For example:
+
+       cd
+       git clone https://github.com/LLormeau/Monaco_v2
+       echo "the lab is copy here "`pwd`"/dynatrace-lab"
+
+2. Install monaco and get ready to start
+
+       cd;cd Monaco_v2/
+       curl -L https://github.com/Dynatrace/dynatrace-configuration-as-code/releases/latest/download/monaco-linux-amd64 -o monaco
+       chmod +x monaco
+       echo "monaco v2 is installed on your host"
+
+3. Run the script with the desired options. For example:
    - For AWS: `./deploy.sh --aws --set-account-name=<name> --set-account-id=<id>`
    - For Kubernetes: `./deploy.sh --kubernetes --set-cluster-name=<name>`
    - For Classic Deployment: `./deploy.sh --classic --set-application-name=<name> --set-application-environment=<env>`
