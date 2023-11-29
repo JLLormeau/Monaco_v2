@@ -1,0 +1,18 @@
+configs:
+- id: ap_classic_$application_name_$application_environment
+  type:
+      settings:
+        schema: builtin:alerting.profile
+        scope: environment
+  config:
+    name: $application_name_$application_environment
+    template: alerting-profile.json
+    parameters:
+      Application: $application_name
+      Environement: $application_environment
+      mz_id:
+          type: reference
+          project: classic-deployment
+          configId: mz_classic_$application_name_$application_environment # or builtin:management-zones if referencing "settings" type configurations
+          configType:  builtin:management-zones
+          property: id

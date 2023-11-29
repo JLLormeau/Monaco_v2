@@ -1,0 +1,12 @@
+configs:
+- id: mz_classic_$application_name_$application_environment
+  type:
+      settings:
+        schema: builtin:management-zones
+        scope: environment
+  config:
+    name: $application_name_$application_environment
+    template: management-zone.json
+    parameters:
+      Application: $application_name
+      Environement: $application_environment

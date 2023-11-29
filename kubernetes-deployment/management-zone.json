@@ -1,0 +1,146 @@
+{
+
+      "name": "[Kubernetes] {{.Cluster_Name}}",
+      "description": "management zone for the {{.Cluster_Name}} Kubernetes cluster",
+      "rules": [
+        {
+          "enabled": true,
+          "type": "DIMENSION",
+          "dimensionRule": {
+            "appliesTo": "METRIC",
+            "conditions": [
+              {
+                "conditionType": "DIMENSION",
+                "key": "k8s.cluster.name",
+                "ruleMatcher": "EQUALS",
+                "value": "{{.Cluster_Name}}"
+              }
+            ]
+          }
+        },
+        {
+          "enabled": true,
+          "type": "ME",
+          "attributeRule": {
+            "entityType": "SERVICE",
+            "conditions": [
+              {
+                "key": "KUBERNETES_CLUSTER_NAME",
+                "operator": "EQUALS",
+                "stringValue": "{{.Cluster_Name}}",
+                "caseSensitive": true
+              }
+            ],
+            "serviceToHostPropagation": false,
+            "serviceToPGPropagation": false
+          }
+        },
+        {
+          "enabled": true,
+          "type": "ME",
+          "attributeRule": {
+            "entityType": "CUSTOM_DEVICE",
+            "conditions": [
+              {
+                "key": "CUSTOM_DEVICE_TAGS",
+                "operator": "EQUALS",
+                "tag": "[AWS]AppName:eks-bi"
+              }
+            ]
+          }
+        },
+        {
+          "enabled": true,
+          "type": "ME",
+          "attributeRule": {
+            "entityType": "KUBERNETES_CLUSTER",
+            "conditions": [
+              {
+                "key": "KUBERNETES_CLUSTER_NAME",
+                "operator": "EQUALS",
+                "stringValue": "{{.Cluster_Name}}",
+                "caseSensitive": true
+              }
+            ]
+          }
+        },
+        {
+          "enabled": true,
+          "type": "ME",
+          "attributeRule": {
+            "entityType": "CLOUD_APPLICATION",
+            "conditions": [
+              {
+                "key": "KUBERNETES_CLUSTER_NAME",
+                "operator": "EQUALS",
+                "stringValue": "{{.Cluster_Name}}",
+                "caseSensitive": true
+              }
+            ]
+          }
+        },
+        {
+          "enabled": true,
+          "type": "ME",
+          "attributeRule": {
+            "entityType": "KUBERNETES_SERVICE",
+            "conditions": [
+              {
+                "key": "KUBERNETES_CLUSTER_NAME",
+                "operator": "EQUALS",
+                "stringValue": "{{.Cluster_Name}}",
+                "caseSensitive": true
+              }
+            ]
+          }
+        },
+        {
+          "enabled": true,
+          "type": "ME",
+          "attributeRule": {
+            "entityType": "HOST",
+            "conditions": [
+              {
+                "key": "KUBERNETES_CLUSTER_NAME",
+                "operator": "EQUALS",
+                "stringValue": "{{.Cluster_Name}}",
+                "caseSensitive": true
+              }
+            ],
+            "hostToPGPropagation": false
+          }
+        },
+        {
+          "enabled": true,
+          "type": "ME",
+          "attributeRule": {
+            "entityType": "PROCESS_GROUP",
+            "conditions": [
+              {
+                "key": "KUBERNETES_CLUSTER_NAME",
+                "operator": "EQUALS",
+                "stringValue": "{{.Cluster_Name}}",
+                "caseSensitive": true
+              }
+            ],
+            "pgToHostPropagation": false,
+            "pgToServicePropagation": false
+          }
+        },
+        {
+          "enabled": true,
+          "type": "ME",
+          "attributeRule": {
+            "entityType": "CLOUD_APPLICATION_NAMESPACE",
+            "conditions": [
+              {
+                "key": "KUBERNETES_CLUSTER_NAME",
+                "operator": "EQUALS",
+                "stringValue": "{{.Cluster_Name}}",
+                "caseSensitive": true
+              }
+            ]
+          }
+        }
+      ]
+    }

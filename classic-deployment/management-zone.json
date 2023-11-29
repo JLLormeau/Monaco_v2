@@ -1,0 +1,133 @@
+{
+
+    "name": "{{ .Application}}_{{ .Environement}}",
+
+    "rules": [
+
+        {
+
+            "enabled": true,
+
+            "type": "ME",
+
+            "attributeRule": {
+
+                "entityType": "SERVICE",
+
+                "conditions": [
+
+                    {
+
+                        "key": "SERVICE_TAGS",
+
+                        "operator": "EQUALS",
+
+                        "tag": "Application:{{ .Application }}"
+
+                    },
+
+                    {
+
+                        "key": "SERVICE_TAGS",
+
+                        "operator": "EQUALS",
+
+                        "tag": "Environment:{{ .Environement }}"
+
+                    }
+
+                ],
+
+                "serviceToHostPropagation": false,
+
+                "serviceToPGPropagation": false
+
+            }
+
+        },
+
+        {
+
+            "enabled": true,
+
+            "type": "ME",
+
+            "attributeRule": {
+
+                "entityType": "PROCESS_GROUP",
+
+                "conditions": [
+
+                    {
+
+                        "key": "PROCESS_GROUP_TAGS",
+
+                        "operator": "EQUALS",
+
+                        "tag": "Environment:{{.Environement}}"
+
+                    },
+
+                    {
+
+                        "key": "PROCESS_GROUP_TAGS",
+
+                        "operator": "EQUALS",
+
+                        "tag": "Application:{{.Application}}"
+
+                    }
+
+                ],
+
+                "pgToHostPropagation": false,
+
+                "pgToServicePropagation": false
+
+            }
+
+        },
+
+        {
+
+            "enabled": true,
+
+            "type": "ME",
+
+            "attributeRule": {
+
+                "entityType": "HOST",
+
+                "conditions": [
+
+                    {
+
+                        "key": "HOST_TAGS",
+
+                        "operator": "EQUALS",
+
+                        "tag": "Environment:{{.Environement}}"
+
+                    },
+
+                    {
+
+                        "key": "HOST_TAGS",
+
+                        "operator": "EQUALS",
+
+                        "tag": "Application:{{.Application}}"
+
+                    }
+
+                ],
+
+                "hostToPGPropagation": true
+
+            }
+
+        }
+
+    ]
+
+}

@@ -1,0 +1,38 @@
+{
+
+      "name": "[{{.Application}}][{{.Environement}}][DEFAULT]",
+      "managementZone": "{{.mz_id}}",
+      "severityRules": [
+        {
+          "severityLevel": "PERFORMANCE",
+          "delayInMinutes": 15,
+          "tagFilterIncludeMode": "NONE"
+        },
+        {
+          "severityLevel": "RESOURCE_CONTENTION",
+          "delayInMinutes": 15,
+          "tagFilterIncludeMode": "NONE"
+        },
+        {
+          "severityLevel": "MONITORING_UNAVAILABLE",
+          "delayInMinutes": 15,
+          "tagFilterIncludeMode": "NONE"
+        },
+        {
+          "severityLevel": "ERRORS",
+          "delayInMinutes": 15,
+          "tagFilterIncludeMode": "NONE"
+        },
+        {
+          "severityLevel": "CUSTOM_ALERT",
+          "delayInMinutes": 15,
+          "tagFilterIncludeMode": "NONE"
+        },
+        {
+          "severityLevel": "AVAILABILITY",
+          "delayInMinutes": 15,
+          "tagFilterIncludeMode": "NONE"
+        }
+      ],
+      "eventFilters": []
+    }

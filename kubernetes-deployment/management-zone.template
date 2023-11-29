@@ -1,0 +1,11 @@
+configs:
+- id: mz-kubernetes-$cluster_name
+  type:
+      settings:
+        schema: builtin:management-zones
+        scope: environment
+  config:
+    name: $cluster_name
+    template: management-zone.json
+    parameters:
+      Cluster_Name: $cluster_name

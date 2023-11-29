@@ -1,0 +1,20 @@
+{
+    "name": "[AWS] {{.Account_Name}}",
+    "rules": [
+        {
+            "enabled": true,
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "AWS_ACCOUNT",
+                "conditions": [
+                    {
+                        "key": "AWS_ACCOUNT_ID",
+                        "operator": "EQUALS",
+                        "stringValue": "{{.Account_Id}}",
+                        "caseSensitive": false
+                    }
+                ]
+            }
+        }
+    ]
+}

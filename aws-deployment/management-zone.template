@@ -1,0 +1,12 @@
+configs:
+- id: ma-aws-$account_name
+  type:
+      settings:
+        schema: builtin:management-zones
+        scope: environment
+  config:
+    name: test
+    template: management-zone.json
+    parameters:
+      Account_Name: $account_name 
+      Account_Id: $account_id
